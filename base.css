@@ -125,7 +125,7 @@ body {
     padding: -4px 0px;
   }
   to {
-    background-position: -500px 0px;
+    background-position: -500px -4px;
   }
 }
 
