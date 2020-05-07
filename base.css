@@ -1,7 +1,9 @@
 
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@font-face {
+	font-family: 'Press Start 2P'; src: url(fonts/PressStart2P-Regular.ttf);
+}
 
-html, body, .container{
+html, body, .container {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -82,7 +84,7 @@ body {
 .mario {
   width: 95px;
   height: 145px;
-  background:url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8f33e32d-ffea-4567-9e67-03309084d3a1/dab5wii-75fe3686-159b-421c-9d8d-5c47f0f45c0d.png/v1/fill/w_291,h_572,strp/super_paper_mario_rpg_maker_ace_vx_sprite_sheet_by_honoramongscars_dab5wii-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTcyIiwicGF0aCI6IlwvZlwvOGYzM2UzMmQtZmZlYS00NTY3LTllNjctMDMzMDkwODRkM2ExXC9kYWI1d2lpLTc1ZmUzNjg2LTE1OWItNDIxYy05ZDhkLTVjNDdmMGY0NWMwZC5wbmciLCJ3aWR0aCI6Ijw9MjkxIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.6ZiddT0jhUO3xqcgt2hbbkmKrO3L2fDcvFlxUiyOHuI);
+  background:url(images/mario_anim.png);
 }
 
 .terrain {
@@ -91,7 +93,7 @@ body {
   height: 220px;
   position: absolute;
   bottom: 0;
-  background: url(https://t1.rbxcdn.com/811d7245e16a624e06a9be7b1e4bd18c) 27px -4px;
+  background: url(images/ground.png) 27px -4px;
 }
 
 .mario {
