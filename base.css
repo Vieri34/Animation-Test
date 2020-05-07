@@ -51,10 +51,10 @@ body {
 
 .cloud {
   height: 100%;
-  background: url(https://static.radulescu.me/examples/clouds/clouds1000.png);
-  background: url(https://static.radulescu.me/examples/clouds/clouds1000.png) 0 200px,
-              url(https://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px,
-              url(https://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px 250px;
+  background: url(images/clouds1000.png);
+  background: url(images/clouds1000.png) 0 200px,
+              url(images/clouds1200_1.png) 0 300px,
+              url(images/clouds1000_blur3.png) 100px 250px;
   animation: wind 20s linear infinite;
 }
 
@@ -69,7 +69,7 @@ body {
 }
 
 /*texte cligno*/
-.anim span {
+.anim-bar span {
   animation: blink 1s infinite;
 }
 
@@ -82,53 +82,82 @@ body {
 /*mario*/
 
 .mario {
+  z-index: 50;
+  position: absolute;
+  top: 18px;
   width: 95px;
   height: 145px;
   background:url(images/mario_anim.png);
 }
 
-.terrain {
+.mario2 {
+  z-index: 51;
+  position: absolute;
+  width: 120px;
+  height: 145px;
+  background:url(images/mario_jump2.png) no-repeat -10px 0;
+}
+
+.ground {
   z-index: 40;
   width: 100%;
   height: 220px;
   position: absolute;
   bottom: 0;
-  background: url(images/ground.png) 27px -4px;
+  background: url(images/ground.png);
 }
 
 .mario {
-  z-index: 50;
-  position: absolute;
-  top: 15px;
   animation: mario-run steps(2) 0.5s infinite,
-             mario-movement 5s forwards;
+             mario-movement 5s forwards,
+             mario-jump 9s,
+             mario-hid 9s;       
 }
-.terrain {
+
+.mario2 {
+  animation: mario-movement 5s forwards,
+             mario-jump 9s,
+             mario-visib 9s infinite;
+}
+
+.ground {
   animation: ground 3s infinite linear;
 }
 
-@keyframes mario-run{
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -195px 0;
-  }
+@keyframes mario-run {
+  from { background-position: 0 0; }
+  to { background-position: -195px 0; }
 }
 
-@keyframes mario-movement{
-  to {
-    margin: 0 500px;
-  }
+@keyframes mario-movement {
+  to { margin: 0 500px; }
 }
 
-@keyframes ground{
-  from {
-    padding: -4px 0px;
-  }
-  to {
-    background-position: -500px -4px;
-  }
+@keyframes mario-jump {
+37%{ transform:translateY(0); }
+40%{ transform:translateY(-250px); }
+40.5%{ transform:translateY(-250px); }
+44%{ transform:translateY(0);}
+}
+
+@keyframes mario-hid {
+36.99%{ opacity: 100%; }
+37%{ opacity: 0; }
+44.99%{ opacity: 0; }
+45%{ opacity: 100%; }
+}
+
+@keyframes mario-visib {
+0% { opacity: 0; }
+36.99%{ opacity: 0; }
+37%{ opacity: 100%; }
+44.99%{ opacity: 100%; }
+45%{ opacity: 0; }
+100% { opacity: 0; }
+}
+
+@keyframes ground {
+  to { background-position: -500px 0; }
 }
 
 /*sun*/
@@ -139,7 +168,6 @@ body {
   width: 100%;
   height: 100%;
 }
-
 
 .sun {
   position: absolute;
