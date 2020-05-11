@@ -111,13 +111,13 @@ body {
   animation: mario-run steps(2) 0.5s infinite,
              mario-movement 5s forwards,
              mario-jump 9s,
-             mario-hid 9s;       
+             mario-hid 9s;
 }
 
 .mario2 {
   animation: mario-movement 5s forwards,
              mario-jump 9s,
-             mario-visib 9s infinite;
+             mario-visib 9s forwards;
 }
 
 .ground {
@@ -148,12 +148,12 @@ body {
 }
 
 @keyframes mario-visib {
-0% { opacity: 0; }
+from { opacity: 0; }
 36.99%{ opacity: 0; }
 37%{ opacity: 100%; }
 44.99%{ opacity: 100%; }
 45%{ opacity: 0; }
-100% { opacity: 0; }
+to { opacity: 0; }
 }
 
 @keyframes ground {
